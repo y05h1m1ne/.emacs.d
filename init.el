@@ -5,6 +5,9 @@
 (require 'browse-kill-ring)
 (global-set-key (kbd "C-c k") 'browse-kill-ring)
 
+;;magit
+(add-to-list 'load-path "~/.emacs.d/elisp/magit")
+(require 'magit)
 
 ;;メニューに「最近開いたファイル」を追加する(M-x recentf-open-files)
 (recentf-mode 1)
@@ -23,7 +26,6 @@
                                 (session-file-alist 50 t)  ;; カーソル位置を保存する件数
                                 (file-name-history 200)))  ;; ファイルを開いた履歴を保存する件数
 
- 	
 ;; 保存しないファイルの正規表現;M-x desktop-save
 (setq desktop-files-not-to-save "\\(^/[^/:]*:\\|\\.diary$\\)")
 (autoload 'desktop-save "desktop" nil t)
